@@ -6097,6 +6097,8 @@ Würth 6200xxxxx22 series
 <part name="X1" library="con-JST PH" deviceset="B7B-PH" device="-SM4-TB"/>
 <part name="U$6" library="microbuilder" deviceset="VIN" device=""/>
 <part name="U$23" library="microbuilder" deviceset="GND" device=""/>
+<part name="R7" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
+<part name="U$1" library="microbuilder" deviceset="VDD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6151,6 +6153,7 @@ the resonant frequency in this case.</text>
 <text x="129.54" y="149.86" size="1.4224" layer="97">Coilcraft 
 1008CS-561</text>
 <text x="152.4" y="215.9" size="1.778" layer="97">10uF removed in v1.6</text>
+<text x="307.34" y="124.46" size="1.778" layer="91">Molex 55460-0772</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -6469,6 +6472,13 @@ the resonant frequency in this case.</text>
 <instance part="U$23" gate="G$1" x="307.34" y="154.94" smashed="yes" rot="R180">
 <attribute name="VALUE" x="308.864" y="157.48" size="1.27" layer="96" rot="R180"/>
 </instance>
+<instance part="R7" gate="G$1" x="200.66" y="172.72" smashed="yes" rot="R180">
+<attribute name="NAME" x="203.2" y="170.688" size="1.27" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="203.2" y="175.895" size="1.27" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="U$1" gate="G$1" x="210.82" y="172.72" smashed="yes" rot="R270">
+<attribute name="VALUE" x="211.836" y="174.244" size="1.27" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6514,6 +6524,11 @@ the resonant frequency in this case.</text>
 <pinref part="SJ2" gate="G$1" pin="3"/>
 <wire x1="210.82" y1="73.66" x2="215.9" y2="73.66" width="0.1524" layer="91"/>
 <junction x="210.82" y="73.66"/>
+</segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="U$1" gate="G$1" pin="VDD"/>
+<wire x1="205.74" y1="172.72" x2="208.28" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -7079,7 +7094,9 @@ the resonant frequency in this case.</text>
 <segment>
 <pinref part="U1" gate="G$1" pin="RSTPD_N"/>
 <wire x1="190.5" y1="162.56" x2="190.5" y2="170.18" width="0.1524" layer="91"/>
-<label x="190.5" y="170.18" size="1.4224" layer="95" rot="R90" xref="yes"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="195.58" y1="172.72" x2="190.5" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="172.72" x2="190.5" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
